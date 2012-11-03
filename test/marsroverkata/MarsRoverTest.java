@@ -11,12 +11,20 @@ import org.junit.Test;
 public class MarsRoverTest {
 
     @Test
-    public void testNewRover() {
+    public void testNewRoverStartingPosition() {
         MarsRover rover = new MarsRover();
         Position startingPosition = new Position(0, 0);
         Direction startingDirection = Direction.EAST;
         rover.initialize(startingPosition, startingDirection);
         assertThat(rover.getCurrentPosition(), is(startingPosition));
+    }
+
+    @Test
+    public void testNewRoverStartingDirection() {
+        MarsRover rover = new MarsRover();
+        Position startingPosition = new Position(0, 0);
+        Direction startingDirection = Direction.EAST;
+        rover.initialize(startingPosition, startingDirection);
         assertThat(rover.getCurrentDirection(), is(startingDirection));
     }
 
@@ -154,7 +162,7 @@ public class MarsRoverTest {
         assertThat(rover.getCurrentPosition(), equalTo(new Position(2, 2)));
 
     }
-    
+
     @Test
     public void testMoveRoverOutOfGrid() {
         MarsRover rover = new MarsRover();
